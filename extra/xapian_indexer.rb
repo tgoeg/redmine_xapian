@@ -393,7 +393,7 @@ def convert_to_text(fpath, type, tempdir)
   else
     text = `#{FORMAT_HANDLERS[type]} #{fpath}`
   end
-  text
+  text.tr_s("\uFFFD","")
 end
 
 def add_or_update_index(databasepath, indexconf, project, repository, identifier, path, lastrev, action, type, tempdir,
